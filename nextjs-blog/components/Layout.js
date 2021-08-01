@@ -5,7 +5,7 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 
 const name = 'Mark Westerweel';
-const siteTitle = 'Personal Page of Mark';
+export const siteTitle = 'Personal Page of Mark';
 
 export default function Layout({ children, home }) {
   return (
