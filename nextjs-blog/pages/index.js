@@ -18,7 +18,7 @@ export default function Home({ allPostsData }) {
           site or connect on Twitter or{' '}
           <a href="https://elentje.nl">elentje.nl</a>
         </p>
-        
+        <p>AT THE MOMENT THIS IS JUST A PLAYTHING. PLEASE COME BACK IN A WEEK OR SO</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
