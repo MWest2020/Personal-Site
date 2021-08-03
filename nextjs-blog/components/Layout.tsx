@@ -1,14 +1,20 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
-import profile from '../public/profile.jpg'
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "./layout.module.css";
+import utilStyles from "../styles/utils.module.css";
+import profile from "../public/profile.jpg";
 
-const name = 'Mark Westerweel';
-export const siteTitle = 'Personal Page of Mark';
+const name = "Mark Westerweel";
+export const siteTitle = "Personal Page of Mark";
 
-export default function Layout({ children, home }) {
+export default function Layout({
+  children,
+  home,
+}: {
+  children: React.ReactNode;
+  home?: boolean;
+}) {
   return (
     <div className={styles.container}>
       <Head>
