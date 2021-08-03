@@ -1,11 +1,20 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Layout, { siteTitle } from '../components/Layout';
-import Date from '../components/date';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import Head from "next/head";
+import Link from "next/link";
+import Layout, { siteTitle } from "../components/Layout";
+import Date from "../components/date";
+import utilStyles from "../styles/utils.module.css";
+import { getSortedPostsData } from "../lib/posts";
+import { GetStaticProps } from "next";
 
-export default function Home({ allPostsData }) {
+export default function Home({
+  allPostsData,
+}: {
+  allPostsData: {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+}) {
   return (
     <Layout home>
       <Head>
@@ -15,10 +24,13 @@ export default function Home({ allPostsData }) {
         <p>
           Hi, I'm Mark. I'm a software engineer and write occasionaly about
           whatever keeps my attention span hostage. You can contact me via this
-          site or connect on Twitter or{' '}
+          site or connect on Twitter or{" "}
           <a href="https://elentje.nl">elentje.nl</a>
         </p>
-        <p>AT THE MOMENT THIS IS JUST A PLAYTHING. PLEASE COME BACK IN A WEEK OR SO</p>
+        <p>
+          AT THE MOMENT THIS IS JUST A PLAYTHING. PLEASE COME BACK IN A WEEK OR
+          SO
+        </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -40,11 +52,11 @@ export default function Home({ allPostsData }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
     },
   };
-}
+};
